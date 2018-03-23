@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/app/screens.xml"/>
+    <screen id="app$Parent.browse"
+            template="com/company/app/web/parent/parent-browse.xml"/>
+    <screen id="app$Parent.edit"
+            template="com/company/app/web/parent/parent-edit.xml"/>
+    <screen id="app$Child.edit"
+            template="com/company/app/web/child/child-edit.xml"/>
+    <screen id="app$Parent.editCombined"
+            template="com/company/app/web/parent/parent-editCombined.xml"/>
+</screen-config>

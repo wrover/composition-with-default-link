@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://combinedEditorCaption"
+        class="com.company.app.web.parent.ParentEditCombined"
+        datasource="parentDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.app.web.parent">
+    <dsContext>
+        <datasource id="parentDs"
+                    class="com.company.app.entity.Parent"
+                    view="parent.editCombined">
+            <datasource id="defaultChildDs"
+                        property="defaultChild"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="parentDs">
+            <column width="250px">
+                <field property="brief"/>
+            </column>
+        </fieldGroup>
+        <fieldGroup id="fieldGroup2"
+                    datasource="defaultChildDs">
+            <column width="250px">
+                <field property="brief"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.app.web.parent.ParentBrowse"
+        focusComponent="parentsTable"
+        lookupComponent="parentsTable"
+        messagesPack="com.company.app.web.parent">
+    <dsContext>
+        <groupDatasource id="parentsDs"
+                         class="com.company.app.entity.Parent"
+                         view="parent.edit">
+            <query>
+                <![CDATA[select e from app$Parent e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="parentsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="parentsTable"
+                datasource="parentsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="parentsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit" openType="DIALOG"/>
+                <action id="editCombined"
+                        caption="editCombined"
+                        invoke="editCombined"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="brief"/>
+                <column id="defaultChild"/>
+            </columns>
+            <rows datasource="parentsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="parentsTable.create"/>
+                <button id="editBtn"
+                        action="parentsTable.edit"/>
+                <button action="parentsTable.editCombined"/>
+                <button id="removeBtn"
+                        action="parentsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
